@@ -108,3 +108,73 @@ We are looking for:
 2. Solution Design
 3. Completeness
 4. Code clarity / readability
+
+API Endpoints
+1. Create Order
+Endpoint: POST /orders
+
+Description: Create a new order.
+
+Request Body:
+{
+  "id": "228",
+  "datetime": "2022-11-01T11:11:11.111Z",
+  "totalfee": 120,
+  "services": [
+    {
+      "id": "789"
+    }
+  ]
+}
+
+2. Update Order
+Endpoint: PUT /orders/:orderId
+
+Description: Update an existing order by ID.
+
+Request Params:
+
+orderId: The ID of the order to be updated.
+Request Body:
+{
+  "totalfee": 150
+}
+
+3. Delete Order
+Endpoint: DELETE /orders/:orderId
+
+Description: Delete an existing order by ID.
+
+Request Params:
+
+orderId: The ID of the order to be deleted.
+4. Get Order by ID
+Endpoint: GET /orders/:orderId
+
+Description: Retrieve information about a specific order by ID.
+
+Request Params:
+
+orderId: The ID of the order to be retrieved.
+5. Get All Orders
+Endpoint: GET /orders
+
+Description: Retrieve information about all orders.
+
+Response Body:
+
+json
+Copy code
+[
+  {
+    "id": "223",
+    "datetime": "2022-11-01T11:11:11.111Z",
+    "totalfee": 100,
+    "services": [
+      {
+        "id": "123"
+      }
+    ]
+  },
+  // ... other orders
+]
